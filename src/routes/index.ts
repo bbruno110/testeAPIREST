@@ -10,7 +10,9 @@ import * as uservalidator from '../Validator/Cadastro_user'
 import * as ingvalidator from '../Validator/Ingrediente_Validator'
 
 
+
 const router = Router();
+router.get("/ping", (req:Request, res:Response)=>{res.json({pong: true, message: 'tewoihoias'})})
 router.post("/login", uservalidator.usuario, cadUserController.Login)
 router.post("/cadastro/Pessoa",Autorizacao.private, pfcontroller.criarPessoa)
 router.post("/cadastro", uservalidator.usuario, cadUserController.Registro_user)
