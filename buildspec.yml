@@ -3,13 +3,13 @@ version: 0.2
 phases:
   pre_build:
     commands:
+      - rm -rf node_modules/
       - echo Install packages...
       - npm install
   build:
     commands:
       - echo Create build...
       - npm run build
-
 artifacts:
   base-directory: '.'
   files:
