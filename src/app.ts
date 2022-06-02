@@ -2,7 +2,7 @@ import 'dotenv/config';
 import express, { ErrorRequestHandler, Request, Response } from 'express';
 import cors from 'cors';
 import path from 'path';
-import router from './routes/index';
+import router from './routes/hike';
 
 const server =  express();
 
