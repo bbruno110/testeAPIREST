@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
+import { Autorizacao } from "../middlewares/autorizacao";
 import * as pfcontroller from '../controllers/pfController';
 import * as cadUserController from '../controllers/Usuario';
-import { Autorizacao } from "../middlewares/autorizacao";
 import * as CategoriaController from "../controllers/Categoria_Controller";
 import * as NutrienteController from "../controllers/Nutriente_Controller";
 import * as Ingredientes_Controller from "../controllers/Ingredientes_Controller";
