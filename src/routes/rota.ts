@@ -18,7 +18,9 @@ router.post('/', async (req, res) => {
     const params = {
       ds: 'asjndhuas',
       Item: req.body
+        }
     }
+)
 router.post("/login", cadUserController.Login)
 router.post("/cadastro/Pessoa",Autorizacao.private, pfcontroller.criarPessoa)
 router.post("/cadastro", uservalidator.usuario, cadUserController.Registro_user)
