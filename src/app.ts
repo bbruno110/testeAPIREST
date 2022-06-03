@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import express, { ErrorRequestHandler, Request, Response } from 'express';
+import express, { ErrorRequestHandler, Request, Response, Router } from 'express';
 import cors from 'cors';
 import { cpf , cnpj} from 'cpf-cnpj-validator';
 import { validationResult } from 'express-validator';
@@ -7,10 +7,11 @@ import {CadastroUser} from './models/Usuarios';
 import {Pessoa_Fisica} from './models/PF';
 import {Pessoa_Juridica} from './models/PJ';
 import path from 'path';
-import router from './routes/rota'
+
 
 
 const server =  express();
+const router = Router();
 
 server.use(cors());
 server.use(express.static(path.join(__dirname, "/public")));
