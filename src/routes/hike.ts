@@ -13,7 +13,7 @@ import * as ingvalidator from '../Validator/Ingrediente_Validator'
 
 const router = Router();
 
-router.get("/", (req:Request, res:Response)=>{res.json({pong: true, message: 'pelo menos esse ta indo....'})})
+router.get("/ping", (req:Request, res:Response)=>{res.json({pong: true, message: 'pelo menos esse ta indo....'})})
 router.post("/login", cadUserController.Login)
 router.post("/cadastro/Pessoa",Autorizacao.private, pfcontroller.criarPessoa)
 router.post("/cadastro", uservalidator.usuario, cadUserController.Registro_user)
