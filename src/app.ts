@@ -6,6 +6,7 @@ import router from './routes/rota'
 
 
 const app =  express();
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.static(path.join(__dirname, "/public")));
@@ -17,4 +18,5 @@ app.use((req:Request, res:Response)=>{
     res.status(404);
     res.json({error: 'Endpoint não encontrado.'});
 });
-export default app;
+
+app.listen(port, ()=> console.log(`app listeninig at ${process.env.PORT}`));
