@@ -5,16 +5,16 @@ import path from 'path';
 import router from './routes/rota'
 
 
-const server =  express();
+const app =  express();
 
-server.use(cors());
-server.use(express.static(path.join(__dirname, "/public")));
-server.use(express.urlencoded({ extended: true }));
-server.use(express.json());
+app.use(cors());
+app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-server.use(router);
-server.use((req:Request, res:Response)=>{
+app.use(router);
+app.use((req:Request, res:Response)=>{
     res.status(404);
     res.json({error: 'Endpoint não encontrado.'});
 });
-export default server;
+export default app;
