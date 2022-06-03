@@ -14,7 +14,7 @@ import * as ingvalidator from '../Validator/Ingrediente_Validator'
 const router = Router();
 
 router.get("/teste", (req:Request, res:Response)=>{res.json({pong: true, message: 'pelo menos esse ta indo....'})})
-router.post('/', async (req, res) => {
+router.post('/tet', async (req, res) => {
     const params = {
       ds: 'asjndhuas',
       Item: req.body
