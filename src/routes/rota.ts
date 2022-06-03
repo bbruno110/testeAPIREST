@@ -14,15 +14,6 @@ import * as ingvalidator from '../Validator/Ingrediente_Validator'
 const router = Router();
 
 router.get("/teste", (req:Request, res:Response)=>{res.json({pong: true, message: 'pelo menos esse ta indo....'})});
-router.post('/tet', async (req, res) => {
-    const params = {
-      ds: 'asjndhuas',
-      Item: req.body
-      
-        }
-        res.json({params})
-    }
-);
 router.post("/login", cadUserController.Login)
 router.post("/cadastro/Pessoa",Autorizacao.private, pfcontroller.criarPessoa)
 router.post("/cadastro", uservalidator.usuario, cadUserController.Registro_user)
