@@ -7,9 +7,10 @@ import router from './routes/hike';
 const server =  express();
 
 server.use(cors())
-server.use(router);
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
-//server.use(express.static(path.join(__dirname, "/public")));
-
+server.get('*',(req, res)=>{
+res.sendFile(path.join(__dirname, "/public"));
+})
+server.use(router);
 export default server;
