@@ -1,8 +1,8 @@
 import 'dotenv/config';
-import express, { ErrorRequestHandler, Request, Response } from 'express';
+import express, { ErrorRequestHandler, Request, Response, Router } from 'express';
 import cors from 'cors';
 import path from 'path';
-import router from './routes/rota';
+
 
 import { Autorizacao } from "./middlewares/autorizacao";
 import * as pfcontroller from './controllers/pfController';
@@ -17,11 +17,13 @@ import * as ingvalidator from './Validator/Ingrediente_Validator'
 
 
 const server =  express();
+const router = Router();
 
 server.use(cors())
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(path.join(__dirname, "/public")));
+
 router.get("/teste", (req:Request, res:Response)=>{res.json({pong: true, message: 'pelo menos esse ta indo....'})});
 router.post("/login", cadUserController.Login)
 router.post("/cadastro/Pessoa",Autorizacao.private, pfcontroller.criarPessoa)
