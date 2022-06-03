@@ -21,8 +21,8 @@ const router = Router();
 
 server.use(cors())
 server.use(express.json());
-server.use(express.urlencoded({ extended: true }));
-server.use(express.static(path.join(__dirname, "/public")));
+//server.use(express.urlencoded({ extended: true }));
+//server.use(express.static(path.join(__dirname, "/public")));
 
 router.get("/teste", (req:Request, res:Response)=>{res.json({pong: true, message: 'pelo menos esse ta indo....'})});
 router.post("/login", cadUserController.Login)
@@ -59,5 +59,5 @@ router.post("/Receita", Autorizacao.private, Receita_controller.Criar_Receita)
 router.get("/Receita", Autorizacao.private, Receita_controller.Listar_receitas)
 router.post("/Receita/Ingrediente", Autorizacao.private, Receita_controller.Criar_ING_Rec)
 router.post("/Receita/Preparo", Autorizacao.private, Receita_controller.modo_Preparo)
-server.use(router);
+
 export default server;
