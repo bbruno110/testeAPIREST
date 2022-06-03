@@ -12,6 +12,6 @@ const server = (0, express_1.default)();
 server.use((0, cors_1.default)());
 server.use(express_1.default.json());
 server.use(express_1.default.urlencoded({ extended: true }));
-server.use(rota_1.default);
 server.use(express_1.default.static(path_1.default.join(__dirname, "/public")));
+server.use(rota_1.default);
 exports.default = server;

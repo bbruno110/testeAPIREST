@@ -18,7 +18,7 @@ router.post("/login", cadUserController.Login);
 router.post("/cadastro/Pessoa",Autorizacao.private, pfcontroller.criarPessoa);
 router.post("/cadastro", uservalidator.usuario, cadUserController.Registro_user);
 router.post("/esqueci-senha", cadUserController.esqueci_senha);
-router.get("/user/me", Autorizacao.private, cadUserController.Detalhes);
+router.get("/me", Autorizacao.private, cadUserController.Detalhes);
 router.put("/user/me", Autorizacao.private, cadUserController.edit_user);
 router.put("/user/me/In-At", Autorizacao.private, cadUserController.Inativar);
 router.get("/user/busca", Autorizacao.private, cadUserController.bucar_Usuario);
